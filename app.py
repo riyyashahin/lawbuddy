@@ -71,9 +71,10 @@ def handle_userinput(user_question) :
 def main() :
 
     import os
-    from dotenv import load_dotenv
-    load_dotenv()
-    print("DEBUG - API Key:", os.getenv("OPENAI_API_KEY"))
+    # from dotenv import load_dotenv
+    # load_dotenv()
+    # print("DEBUG - API Key:", os.getenv("OPENAI_API_KEY"))
+    os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
     st.set_page_config(page_title="Chat with Indian Law", page_icon="⚖️")
 
     st.write(css, unsafe_allow_html=True)
